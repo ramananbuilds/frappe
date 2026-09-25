@@ -109,7 +109,7 @@ frappe.ui.Sidebar = class Sidebar {
 		const installed_app = (frappe.boot.apps_data.apps || []).find((app) => app.name === "crm");
 		if (installed_app && installed_app.route) {
 			const title = __("Switch to CRM");
-			const message = __("Open Frappe CRM");
+			const message = __("Open Studio Lite CRM");
 			this.promotional_banners.push({
 				title,
 				message,
@@ -120,7 +120,7 @@ frappe.ui.Sidebar = class Sidebar {
 			return;
 		}
 
-		const title = __("Switch to Frappe CRM");
+		const title = __("Switch to Studio Lite CRM");
 		const message = __(
 			"Sales without complexity, lock-in and per-user costs. Try it for free!"
 		);

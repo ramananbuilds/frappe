@@ -109,7 +109,7 @@ def get_versions():
 
 	        {
 	                "frappe": {
-	                        "title": "Frappe Framework",
+	                        "title": "Studio Lite",
 	                        "version": "5.0.0"
 	                }
 	        }"""

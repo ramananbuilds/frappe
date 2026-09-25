@@ -104,8 +104,8 @@ frappe.ui.NamingSeriesDialog = class NamingSeriesDialog {
 						<code>.{fieldname}.</code> - ${__("fieldname on the document e.g.")}
 						<code>branch</code>
 					</li>
-					<li><code>.FY.</code> - ${__("Fiscal Year (requires ERPNext to be installed)")}</li>
-					<li><code>.ABBR.</code> - ${__("Company Abbreviation (requires ERPNext to be installed)")}</li>
+					<li><code>.FY.</code> - ${__("Fiscal Year (requires Studio Lite ERP to be installed)")}</li>
+					<li><code>.ABBR.</code> - ${__("Company Abbreviation (requires Studio Lite ERP to be installed)")}</li>
 				</ul>
        		</li>
     		</ul>

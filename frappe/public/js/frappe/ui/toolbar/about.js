@@ -32,7 +32,7 @@ frappe.ui.misc.about = function () {
 			<div class="about-info-rows">
 				<div class="about-info-row">
 					<div class="about-info-content">
-						<div class="about-info-title">${__("Frappe Framework Version")}</div>
+						<div class="about-info-title">${__("Studio Lite Version")}</div>
 						<div class="about-info-sub" id="about-framework-version">
 							${__("Loading...")}
 						</div>

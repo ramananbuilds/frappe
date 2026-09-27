@@ -7,7 +7,7 @@ app_title = "Studio Lite"
 app_publisher = "Studio Lite LLP"
 app_description = "Full stack web framework with Python, Javascript, MariaDB, Redis, Node"
 app_license = "MIT"
-app_logo_url = "/assets/business_suite_branding/images/logo.svg"
+app_logo_url = "/assets/business_suite_branding/images/logo.svg?v3"
 develop_version = "15.x.x-develop"
 app_home = "/app/build"
 

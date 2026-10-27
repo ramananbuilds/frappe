@@ -80,9 +80,26 @@ function get_route(desktop_icon) {
 			route = desktop_icon.link;
 		}
 	} else if (desktop_icon.link_type == "Workspace Sidebar") {
-		// The same landing the Apps screen and the dock open, in the `/desk/<shell>/...` grammar.
-		let sidebar = frappe.utils.sidebar_for_module(desktop_icon.module || desktop_icon.label);
-		if (sidebar) route = frappe.app.sidebar?.module_landing_route(sidebar.name);
+		// What the tile names, in order of intent: the workspace its `link_to` names, the
+		// module the server declares for it, then the label. A tile whose workspace lives
+		// in another module (Invoicing under Accounting) must open the workspace, not that
+		// module's shell landing; a tile naming a standalone area sidebar ("Banking",
+		// "ERP Settings") has no workspace and resolves through the module-keyed payload.
+		for (const key of [desktop_icon.link_to, desktop_icon.module, desktop_icon.label]) {
+			if (!key) continue;
+			let workspace = frappe.workspaces && frappe.workspaces[frappe.router.slug(key)];
+			if (workspace) {
+				route = workspace.public
+					? "/desk/" + frappe.router.slug(key)
+					: "/desk/private/" + frappe.router.slug(workspace.title);
+				break;
+			}
+			let sidebar = frappe.utils.sidebar_for_module(key);
+			if (sidebar) {
+				route = frappe.app.sidebar?.module_landing_route(sidebar.name);
+				if (route) break;
+			}
+		}
 	}
 	return route;
 }
